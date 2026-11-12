@@ -3,10 +3,16 @@ import MenuCard from "@/components/MenuCard";
 
 export default function Dashboard() {
   return (
-    <Shell title="Dashboard" back="/" backLabel="Home">
+    <Shell
+      eyebrow="Dashboard"
+      title="Train with precision."
+      subtitle="Choose a module and start preparing for the ISSB."
+      back="/"
+      backLabel="Home"
+    >
       <div className="grid gap-4 sm:grid-cols-2">
-        <MenuCard title="Intelligence Quotient (IQ)" desc="Practice and full mock test" href="/iq" color="#0b1f5c" />
-        <MenuCard title="More modules" desc="Coming soon" color="#d6d3d1" disabled />
+        <MenuCard i={0} tag="Module" title="Intelligence Quotient" desc="Practice model tests and take the full timed assessment." href="/iq" color="#e11d2e" />
+        <MenuCard i={1} title="More modules" desc="New preparation modules are on the way." color="#2547b8" disabled />
       </div>
     </Shell>
   );

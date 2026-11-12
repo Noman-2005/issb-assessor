@@ -1,10 +1,11 @@
 import PracticeTest from "@/components/PracticeTest";
 import { mt1 } from "@/data/verbal/mt1";
+import { mt2 } from "@/data/verbal/mt2";
 
-const tests: Record<string, typeof mt1> = { "1": mt1 };
+const tests: Record<string, typeof mt1> = { "1": mt1, "2": mt2 };
 
 export async function generateStaticParams() {
-  return [{ id: "1" }];
+  return Object.keys(tests).map((id) => ({ id }));
 }
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
