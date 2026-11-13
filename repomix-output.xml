@@ -1,0 +1,1385 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  logos/
+    anchor.jpg
+    eagle.jpg
+    swords.jpg
+  nonverbal-t1/
+    q01.png
+    q02.png
+    q03.png
+    q04.png
+    q05.png
+    q06.png
+    q07.png
+    q08.png
+    q09.png
+    q10.png
+    q11.png
+    q12.png
+    q13.png
+    q14.png
+    q15.png
+    q16.png
+    q17.png
+    q18.png
+    q19.png
+    q20.png
+    q21.png
+    q22.png
+    q23.png
+    q24.png
+    q25.png
+    q26.png
+  file.svg
+  globe.svg
+  next.svg
+  vercel.svg
+  window.svg
+src/
+  app/
+    dashboard/
+      page.tsx
+    iq/
+      practice/
+        non-verbal/
+          [id]/
+            page.tsx
+          page.tsx
+        verbal/
+          [id]/
+            page.tsx
+          page.tsx
+        page.tsx
+      test/
+        page.tsx
+      page.tsx
+    favicon.ico
+    globals.css
+    layout.tsx
+    page.tsx
+  components/
+    MenuCard.tsx
+    PracticeTest.tsx
+    Shell.tsx
+  data/
+    nonverbal/
+      nv1.ts
+    verbal/
+      mt1.ts
+      mt2.ts
+.gitignore
+AGENTS.md
+eslint.config.mjs
+next.config.ts
+package.json
+README.md
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/file.svg">
+<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
+</file>
+
+<file path="public/globe.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+</file>
+
+<file path="public/next.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
+</file>
+
+<file path="public/vercel.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+</file>
+
+<file path="public/window.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+</file>
+
+<file path="src/app/iq/practice/non-verbal/[id]/page.tsx">
+import PracticeTest from "@/components/PracticeTest";
+import { nv1 } from "@/data/nonverbal/nv1";
+
+const tests: Record<string, typeof nv1> = { "1": nv1 };
+
+export async function generateStaticParams() {
+  return Object.keys(tests).map((id) => ({ id }));
+}
+
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const qs = tests[id];
+  if (!qs) return <p className="p-10">Test not found.</p>;
+  return <PracticeTest title={`Non-Verbal Test ${id}`} questions={qs} back="/iq/practice/non-verbal" />;
+}
+</file>
+
+<file path="src/data/verbal/mt1.ts">
+export type Question = {
+  q: string;
+  options: string[];
+  answer: number;
+  explanation: string;
+};
+
+export const mt1: Question[] = [
+  { q: "Complete the series 1,3,4,8,15,27,...?", options: ["45", "50", "55", "60"], answer: 1, explanation: "Each new number is the sum of the previous three numbers. Therefore, 8 + 15 + 27 = 50." },
+  { q: "AZ, GT, MN, ?, YB", options: ["KF", "RX", "SH", "TS"], answer: 2, explanation: "The first letters move forward by 6 positions (A, G, M, S, Y), while the second letters move backward by 6 positions (Z, T, N, H, B)." },
+  { q: "A/2, B/4, C/6, D/8, ?, ?", options: ["E/8, F/10", "E/12, F/14", "E/10, F/12", "D/10, E/10"], answer: 2, explanation: "The letters follow alphabetical order, while the numbers increase by 2 each time." },
+  { q: "Success is to Student so Cure is to?", options: ["Victim", "Patient", "Sufferer", "Resigned"], answer: 1, explanation: "Success is associated with a student, just as a cure is associated with a patient." },
+  { q: "CHM=NSX, TOT=?", options: ["UEX", "JIK", "LUE", "EZE"], answer: 3, explanation: "Each letter is shifted 11 positions forward in the alphabet. Applying the same rule to TOT gives EZE." },
+  { q: "Arrange the given words Alphabetical Order and choose the one that comes first.", options: ["Wasp", "Waste", "War", "Wrinkle"], answer: 2, explanation: "In alphabetical order, War comes before Wasp, Waste, and Wrinkle." },
+  { q: "ARMAATHSRA (Indian city), Last letter is -", options: ["A", "S", "R", "H"], answer: 0, explanation: "Rearranging ARMAATHSRA gives MAHARASHTRA, which ends with A. Note: Maharashtra is an Indian state, not a city." },
+  { q: "SROLHICK (Name of drink), Last letter is –", options: ["L", "H", "S", "R"], answer: 2, explanation: "Rearranging SROLHICK gives HORLICKS, a drink whose name ends with S." },
+  { q: "Your chickens hatch count before don’t they. Choose the 2nd word.", options: ["Chickens", "Your", "Count", "They"], answer: 2, explanation: "The correct sentence is \"Don't count your chickens before they hatch.\" The second word is Count." },
+  { q: "Judge cover a book don’t it’s by, Choose 3rd word.", options: ["A", "Don’t", "Book", "Judge"], answer: 0, explanation: "The correct proverb is \"Don't judge a book by its cover.\" The third word is A." },
+  { q: "Smoking is bad for health.", options: ["True", "False", "None"], answer: 0, explanation: "Smoking is harmful to health and increases the risk of several serious diseases." },
+  { q: "Supply the single letter which when prefixed to each of the following word makes a new word. [ ake age alm adet ]", options: ["B", "M", "C", "P"], answer: 2, explanation: "Adding C produces Cake, Cage, Calm, and Cadet, all meaningful English words." },
+  { q: "Find the odd", options: ["Bangladesh", "India", "Nepal", "Saudi Arabia"], answer: 3, explanation: "Bangladesh, India, and Nepal are South Asian countries, whereas Saudi Arabia is in Western Asia." },
+  { q: "What three letters can change a girl into a woman?", options: ["Man", "Old", "Age", "None"], answer: 2, explanation: "The three letters A, G, and E can be used to transform \"girl\" into \"woman\" conceptually through the idea of age and maturity." },
+  { q: "Ayesha's father was 38 years of age when she was born. Her mother was 36 years old when her brother was born. Ayesha is four years older than her younger brother. What is the difference between the ages of her parents?", options: ["2 years", "4 years", "6 years", "8 years"], answer: 2, explanation: "When Ayesha's brother was born, Ayesha was 4 years old. Her father was 42 and her mother was 36, making the difference 6 years." },
+  { q: "A tailor had a number of shirt pieces to cut from a roll of fabric. He cut each roll of equal length into 10 pieces. He cut at the rate of 45 cuts a minute. How many rolls would be cut in 24 minutes?", options: ["30 rolls", "58 rolls", "120 rolls", "150 rolls"], answer: 2, explanation: "Each roll requires 9 cuts to produce 10 pieces. Total cuts = 45 × 24 = 1080; therefore, rolls = 1080 ÷ 9 = 120." },
+  { q: "Complete the series 28,33,31,36,?,39", options: ["30", "32", "33", "34"], answer: 3, explanation: "The pattern alternates between +5 and −2. Therefore, 36 − 2 = 34." },
+  { q: "AZ,CX,FU,?", options: ["IR", "IV", "JQ", "KP"], answer: 2, explanation: "The first letters increase by 2, 3, and 4 positions, while the second letters decrease by 2, 3, and 4 positions." },
+  { q: "Q1F, S2E, U6D, W21C, ?", options: ["Z88B", "Y66B", "Y44B", "Y88B"], answer: 3, explanation: "The first letters increase by 2 positions and the last letters decrease by 1. The middle numbers follow ×1+1, ×2+2, ×3+3, and ×4+4." },
+  { q: "New is to old as Modern is to", options: ["Former", "Backdated", "Ancient", "Early"], answer: 2, explanation: "New is the opposite of Old, just as Modern is the opposite of Ancient." },
+  { q: "JIK= POQ, DCE=?", options: ["POQ", "JIK", "OSM", "TMO"], answer: 1, explanation: "Each letter moves 6 positions forward in the alphabet. Applying this rule to DCE gives JIK." },
+  { q: "Arrange the given words Alphabetical Order and choose the one that comes first.", options: ["Science", "Scripture", "Script", "Scramble"], answer: 0, explanation: "In alphabetical order, Science comes first because its third letter is I, while the other words have R at that position." },
+  { q: "YBDRAN (Name of drink), first letter is –", options: ["Y", "N", "B", "R"], answer: 2, explanation: "Rearranging YBDRAN gives BRANDY. The first letter is B." },
+  { q: "Find the odd man out.", options: ["Pen", "Gitanjali", "Harry potter", "Tripitak"], answer: 0, explanation: "Gitanjali, Harry Potter, and Tripitaka are literary works or books, whereas a pen is a writing instrument." },
+  { q: "Bangladesh is a developed country.", options: ["True", "False", "None"], answer: 1, explanation: "Bangladesh is classified as a developing country rather than a developed country." },
+  { q: "Find the odd", options: ["Shirt", "Trousers", "Socks", "Skirt"], answer: 0, explanation: "Trousers, socks, and skirts are generally associated with the lower body, whereas a shirt is worn on the upper body." },
+  { q: "A monkey climbs 30 feet at the beginning of each hour and rests for a while when he slips back 20 feet before he again starts climbing in the beginning of the next hour. If he begins his ascent at 8.00 a.m., at what time will he first touch a flag at 120 feet from the ground?", options: ["4 p.m.", "5 p.m.", "6 p.m.", "8 p.m."], answer: 1, explanation: "The monkey gains a net 10 feet per hour. At 5 p.m., it starts at 90 feet and climbs 30 feet, reaching the 120-foot flag." },
+  { q: "Pointing to a photography of a boy, Suresh said,” He is the son of the only son of my mother”. How Suresh is related to that boy?", options: ["Brother", "Uncle", "Cousin", "Father"], answer: 3, explanation: "The only son of Suresh's mother is Suresh himself. Therefore, the boy is Suresh's son." },
+  { q: "If in a certain language, MADRAS is coded as NBESBT, how is BOMBAY coded in that code?", options: ["CPNCBX", "CPNCBZ", "CPOCBZ", "CQOCBZ"], answer: 1, explanation: "Each letter is shifted one position forward. Applying the same rule to BOMBAY gives CPNCBZ." },
+  { q: "Moon: Satellite, as Earth : ?", options: ["Sun", "Planet", "Solar System", "Asteroid"], answer: 1, explanation: "The Moon is a satellite, just as the Earth is a planet." },
+  { q: "Which color makes a snake angry?", options: ["Red", "Blue", "White", "Purple"], answer: 0, explanation: "Red is the conventional answer expected in this type of IQ question. However, there is no scientific rule that a particular colour universally makes snakes angry." },
+  { q: "Choose the correctly spelt word.", options: ["Reconnaissence", "Reconnaissance", "Reconnaisance", "Reconaissance"], answer: 1, explanation: "Reconnaissance is the correct spelling. Option B contains the correct spelling in the corrected question paper." },
+  { q: "If South-East become North, North-East become West and so on. Then what will West become?", options: ["North-East", "North-West", "South-East", "South-West"], answer: 2, explanation: "Every direction is rotated 135° anticlockwise. Therefore, West becomes South-East." },
+  { q: "What is the synonym of BOATMAN?", options: ["Ferryman", "Sibyllic", "Middling", "Bagman"], answer: 0, explanation: "A boatman and a ferryman both transport people across water using a boat or similar vessel." },
+  { q: "Today is Wednesday, what will be the day after 94 days?", options: ["Saturday", "Wednesday", "Friday", "Sunday"], answer: 0, explanation: "94 ÷ 7 leaves a remainder of 3. Three days after Wednesday is Saturday." },
+  { q: "Arrange the words given below in a meaningful sequence. 1. Key 2. Door 3. Lock 4. Room 5. Switch on", options: ["5, 1, 2, 4, 3", "4, 2, 1, 5, 3", "1, 3, 2, 4, 5", "1, 2, 3, 5, 4"], answer: 2, explanation: "First, use the key to unlock the lock, open the door, enter the room, and then switch on the light." },
+  { q: "A boatman can row 3 km against the stream in 20 minutes and return in 18 minutes. Find the rate of current", options: ["3/1 km/h", "2/3 km/h", "2/1 km/h", "1/2 km/h"], answer: 3, explanation: "Upstream speed = 9 km/h and downstream speed = 10 km/h. Current speed = (10 − 9) ÷ 2 = 0.5 km/h." },
+  { q: "The passage of soul after death from one body to another.", options: ["Transmutations", "Post diadem", "Metamorphosis", "Transmigration"], answer: 3, explanation: "Transmigration refers to the passage of a soul from one body to another after death." },
+  { q: "Which one of the following can’t be the square of natural number?", options: ["32761", "42437", "81225", "20164"], answer: 1, explanation: "206² = 42436. Therefore, 42437 cannot be the square of a natural number." },
+  { q: "If a giraffe has two eyes, a monkey has two eyes, and an elephant has two eyes, how many eyes do we have?", options: ["3", "4", "6", "2"], answer: 3, explanation: "The question asks how many eyes we have. A human being normally has two eyes." },
+  { q: "Find the correctly spelt word.", options: ["Obsoliete", "Obsoletie", "Obsolete", "Obsolite"], answer: 2, explanation: "Obsolete is the correct spelling. It means outdated or no longer in use." },
+  { q: "Complete analogous pair; Forecast : Future :: Regret : ?", options: ["Present", "Atone", "Past", "Sins"], answer: 2, explanation: "A forecast concerns the future, whereas regret generally concerns something that happened in the past." },
+  { q: "One number-series is given in which one term is wrong. Find out the wrong term. 4, 11, 21, 34, 49, 69,91.", options: ["34", "69", "49", "21"], answer: 2, explanation: "The differences should be +7, +10, +13, +16, +19, and +22. Therefore, 49 should be 50." },
+  { q: "There are six persons A,B,C,D,E and F. C is The sister of F. B is the brother of E’s husband. D is the father of A and grandfather of F. There are two fathers, three brothers and a mother in the group. Who is the mother?", options: ["A", "B", "D", "E"], answer: 3, explanation: "E is the mother of C and F. She is also the wife of A, while B is the brother of A and D is their father." },
+  { q: "In a certain code, TRIPPLE is written as SQHOOKD. How is DISPOSE written in that code?", options: ["CHRONRD", "DSOESPI", "ESJTPTF", "ESOPSID"], answer: 0, explanation: "Each letter is shifted one position backward in the alphabet. Applying the same rule to DISPOSE gives CHRONRD." },
+  { q: "Rasik walked 20 m towards north. Then he turned right and walks 30 m. Then he turns right and walks 35 m. Then he turns left and walks 15 m. Finally he turns left and walks 15 m. In which direction and how many meters is he from the starting position?", options: ["15 m West", "30 m East", "30 m West", "45 m East"], answer: 3, explanation: "After combining all movements, the north-south displacement becomes zero, while the total eastward displacement is 45 metres." },
+  { q: "What is the antonym of Dispensable?", options: ["Disposable", "Minor", "Trivial", "Indispensable"], answer: 3, explanation: "Dispensable means unnecessary or replaceable, whereas Indispensable means absolutely necessary." },
+  { q: "If the First day of the year (other than leap year) was Friday, then which was the last of that year?", options: ["Wednesday", "Thursday", "Friday", "Sunday"], answer: 2, explanation: "A non-leap year has 365 days. The difference between the first and last days is 364 days, exactly 52 weeks. Therefore, both days are Friday." },
+  { q: "Arrange the words given below in a meaningful sequence. 1. Word 2. Paragraph 3. Sentence 4. Letters 5. Phrase", options: ["4, 1, 5, 2, 3", "4, 1, 3, 5, 2", "4, 2, 5, 1, 3", "4, 1, 5, 3, 2"], answer: 3, explanation: "Letters form Words, Words form Phrases, Phrases form Sentences, and Sentences form Paragraphs." },
+  { q: "A boatman can row 96 km downstream in 8 hr. If the speed of the current is 4 km/h, then find in what time will be able to cover 8 km upstream?", options: ["2 hrs.", "3 hrs.", "2.5 hrs.", "3.5 hrs."], answer: 0, explanation: "Downstream speed = 96 ÷ 8 = 12 km/h. Boat speed in still water = 12 − 4 = 8 km/h. Upstream speed = 8 − 4 = 4 km/h. Time = 8 ÷ 4 = 2 hours." },
+];
+</file>
+
+<file path="src/data/verbal/mt2.ts">
+import type { Question } from "./mt1";
+
+export const mt2: Question[] = [
+  {
+    q: "Complete the series 0.5, 0.55, 0.65, 0.8,....?",
+    options: ["0.7", "0.9", "0.95", "1"],
+    answer: 3,
+    explanation: "The difference between consecutive terms increases by 0.05 each time: +0.05, +0.10, +0.15, +0.20. Adding 0.20 to 0.8 gives 1."
+  },
+  {
+    q: "AZ, BY, CX,?",
+    options: ["EF", "GH", "IJ", "DW"],
+    answer: 3,
+    explanation: "Each pair matches a letter from the start of the alphabet with its counterpart from the end (1st & 26th, 2nd & 25th, 3rd & 24th). Following this pattern, the 4th letter D pairs with the 23rd letter W."
+  },
+  {
+    q: "275, 7Y7, 14X9, 23W11, 34V13, ?",
+    options: ["27U24", "47U15", "45U15", "47V14"],
+    answer: 1,
+    explanation: "(Note: 275 is a typo for 2Z5.) The first numbers add consecutive odd numbers (+5, +7, +9, +11, +13 = 47), the letters move backward by one (Z → Y → X → W → V → U), and the last numbers increase by 2 (13 + 2 = 15)."
+  },
+  {
+    q: "Fear is to Coward as Brave is to",
+    options: ["Soldier", "Hero", "Bravery", "Fearless"],
+    answer: 1,
+    explanation: "This analogy pairs a quality or emotion with the person defined by it. Just as someone ruled by fear is a coward, someone defined by being brave is a hero."
+  },
+  {
+    q: "GEB=PRQ, BDA=?",
+    options: ["OVQ", "KQP", "KUP", "IZNA"],
+    answer: 1,
+    explanation: "Each letter in GEB shifts forward by +9, +13, and +15 positions respectively to form PRQ. Applying the same shifts to BDA (B+9=K, D+13=Q, A+15=P) gives KQP."
+  },
+  {
+    q: "Arrange the given words Alphabetical Order and choose the one that comes first.",
+    options: ["Intellect", "Intend", "Intelligent", "Integument"],
+    answer: 3,
+    explanation: "All four words start with 'Inte-', so we compare the fifth letter: 'g' in Integument comes before 'l' in Intellect/Intelligent and 'n' in Intend."
+  },
+  {
+    q: "TKRHOGANAU (Name of district), first letter is –",
+    options: ["N", "A", "T", "G"],
+    answer: 2,
+    explanation: "Rearranging the jumbled letters TKRHOGANAU forms THAKURGAON, a district in Bangladesh. The first letter of this district's name is T."
+  },
+  {
+    q: "All your basket eggs don’t in one put. Choose the 2nd word:",
+    options: ["Put", "Basket", "One", "Eggs"],
+    answer: 0,
+    explanation: "Rearranging the words into the proper proverb gives: \"Don't put all your eggs in one basket.\" The second word in this sentence is Put."
+  },
+  {
+    q: "London is the capital of United Kingdom.",
+    options: ["True", "False", "None"],
+    answer: 0,
+    explanation: "London is the official capital city of the United Kingdom, making the statement factually True."
+  },
+  {
+    q: "Supply the single letter which when prefixed to each of the following word makes a new word. (leat lind low reak)",
+    options: ["C", "F", "B", "M"],
+    answer: 2,
+    explanation: "Adding the letter B to the beginning of each fragment forms four valid English words: Bleat, Blind, Blow, and Break."
+  },
+  {
+    q: "Find the odd-",
+    options: ["Commodore", "Major", "Colonel", "General"],
+    answer: 0,
+    explanation: "Major, Colonel, and General are all commissioned officer ranks in the Army. Commodore is the odd one out because it is a Naval rank."
+  },
+  {
+    q: "The sum of ages of family members (both children and parents) is 360 years. The total ages of children and parents are in the ratio 2:1 and the ages of wife and husband are in the ratio 5:7.What will be the age of husband?",
+    options: ["60", "75", "77", "70"],
+    answer: 3,
+    explanation: "Since children and parents are in a 2:1 ratio of 360, the parents' combined age is (1/3) × 360 = 120. Dividing 120 in a 5:7 ratio gives the husband's age as (7/12) × 120 = 70."
+  },
+  {
+    q: "If, Apple is to 4, then Watermelon is to?",
+    options: ["1", "2", "3", "4"],
+    answer: 2,
+    explanation: "Apple has 5 letters, and the word \"FIVE\" has 4 letters. Similarly, Watermelon has 10 letters, and the word \"TEN\" has 3 letters."
+  },
+  {
+    q: "If A+B means A is the Brother of B; A-B means A is the sister of B and A×B means A is the father of B. Which of the following means that C is the son of M?",
+    options: ["M-N×C+F", "F-C+M×N", "N+M-F×C", "M×N-C+F"],
+    answer: 3,
+    explanation: "In M×N-C+F, M is the father of N, N is the sister of C, and C is the brother of F. Since C is male (brother) and shares the same father as N, C is the son of M."
+  },
+  {
+    q: "In a certain code, MONKEY is written as XDJMNL. How is TIGER written in that code?",
+    options: ["QDFHS", "SDFHS", "SHFDQ", "UJHFS"],
+    answer: 0,
+    explanation: "Reverse the word TIGER to get REGIT, then shift each letter backward by 1 position in the alphabet (R→Q, E→D, G→F, I→H, T→S) to get QDFHS."
+  },
+  {
+    q: "Rahul put his timepiece on the table in such a way that at 6 P.M. hour hand points to North. In which direction the minute hand will point at 9.15 P.M.?",
+    options: ["South-East", "South", "North", "West"],
+    answer: 3,
+    explanation: "Normally, the hour hand points South at 6:00 PM, meaning the clock is rotated 180° if it points North. Consequently, at 9:15 PM, the minute hand points West instead of its usual East direction."
+  },
+  {
+    q: "What is the synonym of IGNORANCE?",
+    options: ["Insolent", "Seizure", "Oblivion", "Unlawful"],
+    answer: 2,
+    explanation: "Ignorance refers to a lack of knowledge or awareness. Among the choices, Oblivion (the state of being unaware or unconscious of what is happening) is the closest synonym."
+  },
+  {
+    q: "If 1st October is Sunday, then 1st November will be?",
+    options: ["Wednesday", "Friday", "Sunday", "Monday"],
+    answer: 0,
+    explanation: "October has 31 days, which equals 4 full weeks + 3 extra days. Adding 3 days to Sunday lands on Wednesday."
+  },
+  {
+    q: "Arrange the words given below in a meaningful sequence. 1. Police 2. Punishment 3. Crime 4. Judge 5. Judgment",
+    options: ["3, 1, 2, 4, 5", "1, 2, 4, 3, 5", "5, 4, 3, 2, 1", "3, 1, 4, 5, 2"],
+    answer: 3,
+    explanation: "In a logical legal sequence, a Crime (3) happens first, followed by Police (1) intervention, a trial before a Judge (4), a Judgment (5), and finally Punishment (2)."
+  },
+  {
+    q: "A man can row 40 kmph in still water and the river is running at 10 kmph. If the man takes 1 hour to row to a place and back, how far is the place?",
+    options: ["18.57 km", "18.75 km", "51.87 km", "51.78 km"],
+    answer: 1,
+    explanation: "Downstream speed is 40 + 10 = 50 km/h and upstream speed is 40 - 10 = 30 km/h. Solving d/50 + d/30 = 1 hour gives a one-way distance d = 18.75 km."
+  },
+  {
+    q: "The doctor who specializes in the treatment of nervous system.",
+    options: ["Oculist", "Optician", "Obstetrician", "Neurologist"],
+    answer: 3,
+    explanation: "A Neurologist is a medical specialist who diagnoses and treats disorders of the brain, spinal cord, and nervous system."
+  },
+  {
+    q: "If 84 × 13 = 8, 37 × 13 = 6, 26 × 11 = 6, Then 56 × 22 =?",
+    options: ["36", "39", "7", "11"],
+    answer: 2,
+    explanation: "The operation subtracts the sum of the second number's digits from the sum of the first number's digits. Thus, (5 + 6) - (2 + 2) = 11 - 4 = 7."
+  },
+  {
+    q: "One rabbit saw 6 elephants while going towards River. Every elephant saw 2 monkeys are going towards river. Every monkey holds one tortoise in their hands. How many animals are going towards the river?",
+    options: ["14", "11", "8", "5"],
+    answer: 3,
+    explanation: "Only the 1 rabbit, the 2 monkeys (seen by each elephant, not 6 × 2), and the 2 tortoises they hold are going toward the river (1 + 2 + 2 = 5), as the elephants' direction isn't mentioned."
+  },
+  {
+    q: "Find the correctly spelt word.",
+    options: ["Moustach", "Moustcahe", "Moustache", "Muostache"],
+    answer: 2,
+    explanation: "Moustache is the standard British and Commonwealth English spelling for hair grown on the upper lip."
+  },
+  {
+    q: "Complete analogous pair; Fear : Threat :: Anger : ?",
+    options: ["Compulsion", "Panic", "Provocation", "Force"],
+    answer: 2,
+    explanation: "This analogy connects an emotion to the external trigger that causes it. Just as a threat triggers fear, a provocation triggers anger."
+  },
+  {
+    q: "Complete the series 1,4,27,16,?,36,343",
+    options: ["50", "78", "125", "132"],
+    answer: 2,
+    explanation: "The series alternates between cubes and squares of consecutive natural numbers: 1³, 2², 3³, 4², 5³, 6², 7³. The missing 5th term is 5³ = 125."
+  },
+  {
+    q: "DKY, FJW, HIU, JHS, ?",
+    options: ["KGR", "LFQ", "KFR", "LGQ"],
+    answer: 3,
+    explanation: "In each term, the first letter moves forward by +2 (J → L), the second moves backward by -1 (H → G), and the third moves backward by -2 (S → Q)."
+  },
+  {
+    q: "P3C, R5F, T8I, V12L, ?",
+    options: ["Y17O", "X17M", "X17O", "X16O"],
+    answer: 2,
+    explanation: "The first letter jumps +2 (V → X), the middle number increases by +2, +3, +4, +5 (12 + 5 = 17), and the last letter jumps +3 (L → O)."
+  },
+  {
+    q: "Absent is to Present as Culpable is to",
+    options: ["Innocent", "Blameless", "Pure", "Sinless"],
+    answer: 0,
+    explanation: "Absent and Present are direct opposites. Similarly, the direct antonym of Culpable (guilty or deserving blame) is Innocent."
+  },
+  {
+    q: "LOVE=MNPA, HATE=?",
+    options: ["IZNB", "IZAN", "IZCN", "IZNA"],
+    answer: 3,
+    explanation: "Comparing LOVE to MNPA gives positional shifts of +1, -1, -6, and -4. Applying the exact same shifts to HATE (H+1=I, A-1=Z, T-6=N, E-4=A) yields IZNA."
+  },
+  {
+    q: "Arrange the given words Alphabetical Order and choose the one that comes first.",
+    options: ["Nature", "Native", "Narrate", "Nascent"],
+    answer: 2,
+    explanation: "All four words begin with 'Na-', so we look at the third letter: 'r' in Narrate comes before 's' in Nascent and 't' in Native/Nature."
+  },
+  {
+    q: "Choose the first letter: UNT GEO (Part of body)",
+    options: ["O", "G", "U", "T"],
+    answer: 3,
+    explanation: "Unscrambling the letters UNT GEO spells TONGUE, which is a part of the human body. Its first letter is T."
+  },
+  {
+    q: "Cloud silver has a lining every. Choose the 2nd word:",
+    options: ["Has", "Silver", "lining", "Cloud"],
+    answer: 3,
+    explanation: "Ordering the words into the well-known proverb gives: \"Every cloud has a silver lining.\" The second word in the sentence is Cloud."
+  },
+  {
+    q: "Every cloud has a silver lining.",
+    options: ["True", "False", "None"],
+    answer: 0,
+    explanation: "\"Every cloud has a silver lining\" is a grammatically correct and standard English idiom meaning every bad situation has a positive side."
+  },
+  {
+    q: "Find the odd-",
+    options: ["Helium", "Oxygen", "Sodium", "Hydrogen"],
+    answer: 2,
+    explanation: "Helium, Oxygen, and Hydrogen are all gases at room temperature. Sodium is the odd one out because it is a solid alkali metal."
+  },
+  {
+    q: "How could all of your cousins have an uncle who is not your uncle?",
+    options: ["Their uncle must be your uncle.", "They do not have any uncle.", "Their uncle is your father", "Not possible"],
+    answer: 2,
+    explanation: "Your father is the brother of your aunt or uncle, making him an uncle to all of your cousins—while to you, he is your dad, not your uncle."
+  },
+  {
+    q: "A child that is developed or matured before time?",
+    options: ["Caesarian", "Pseudonym", "Soliloquy", "Precocious"],
+    answer: 3,
+    explanation: "Precocious describes a child who develops physical, mental, or social abilities much earlier than is typical for their age."
+  },
+  {
+    q: "If A is the brother of B; B is the sister of C; and C is the father of D, how D is related to A?",
+    options: ["Brother", "Sister", "Nephew", "Cannot be determined"],
+    answer: 3,
+    explanation: "A is the brother of D's father (C), making A the uncle of D. However, because D's gender is not specified, we cannot tell if D is a nephew or a niece."
+  },
+  {
+    q: "If in a code language, COULD is written as BNTKC and MARGIN is written as LZQFHM, how will MOULDING be written in that code?",
+    options: ["CHMFINTK", "LNKTCHMF", "LNTKCHMF", "NITKHCMF"],
+    answer: 2,
+    explanation: "Each letter in the word is coded by moving 1 step backward in the alphabet (-1). Shifting every letter of MOULDING back by 1 produces LNTKCHMF."
+  },
+  {
+    q: "What is the weight of adult Human Brain in Grams?",
+    options: ["300-400 grams", "700-800 grams", "1100-1200 grams", "1300-1400 grams"],
+    answer: 3,
+    explanation: "A healthy adult human brain typically weighs between 1,300 and 1,400 grams (roughly 3 pounds)."
+  },
+  {
+    q: "One morning after Sunrise, Kabir was standing facing a pole. The shadow of the pole fell exactly to his right. To which direction was he facing?",
+    options: ["East", "West", "South", "Data is inadequate"],
+    answer: 2,
+    explanation: "In the morning, the sun is in the East, casting shadows toward the West. Since the shadow fell to Kabir's right (West), he must have been facing South."
+  },
+  {
+    q: "What is the antonym of ATTACK?",
+    options: ["Protect", "Ancestry", "Inflated", "Inconsequential"],
+    answer: 0,
+    explanation: "Attack means to take aggressive action against something, whereas to protect means to defend or keep it safe from harm."
+  },
+  {
+    q: "Suganya went to the movies nine days ago. She goes to the movies only on Thursday. What the day week is today?",
+    options: ["Friday", "Saturday", "Tuesday", "Thursday"],
+    answer: 1,
+    explanation: "Since Suganya only goes to the movies on Thursday, 9 days ago was a Thursday. Counting forward 9 days (1 week + 2 days) from Thursday brings us to Saturday."
+  },
+  {
+    q: "Arrange the words given below in a meaningful sequence. 1. Family 2. Community 3. Member 4. Locality 5. Country",
+    options: ["3, 1, 2, 4, 5", "3, 1, 2, 5, 4", "3, 1, 4, 2, 5", "3, 1, 4, 5, 2"],
+    answer: 0,
+    explanation: "Arranged in ascending order of social and geographic scale, an individual Member (3) belongs to a Family (1), which forms a Community (2), inside a Locality (4), within a Country (5)."
+  },
+  {
+    q: "A man can row 4 kmph is still water. If the river is running at 2 kmph it takes 90 min to row to a place and back. How far is the place?",
+    options: ["3.22 km", "5.22 km", "2.25 km", "2.52 km"],
+    answer: 2,
+    explanation: "Downstream speed is 4 + 2 = 6 km/h and upstream speed is 4 - 2 = 2 km/h. Solving d/6 + d/2 = 1.5 hours (90 min) gives d = 2.25 km."
+  },
+  {
+    q: "Ready to believe.",
+    options: ["Credulous", "Credible", "Creditable", "Incredible"],
+    answer: 0,
+    explanation: "Credulous means having a tendency to believe things too easily or quickly without sufficient evidence."
+  },
+  {
+    q: "A clock is started at noon. By 10 minutes past 5, the hour hand has turned through.",
+    options: ["145", "150", "155", "160"],
+    answer: 2,
+    explanation: "From 12:00 noon to 5:10 PM is 5 hours and 10 minutes (310 minutes). Since the hour hand moves 0.5° per minute, it turns 310 × 0.5° = 155°."
+  },
+  {
+    q: "Find the correctly spelt word.",
+    options: ["Palete", "Palet", "Palate", "Pelate"],
+    answer: 2,
+    explanation: "Palate is the correct spelling referring to the roof of the mouth or a person's sense of taste (not to be confused with an artist's palette or a wooden pallet)."
+  },
+  {
+    q: "Complete analogous pair; Influenza : Virus :: Typhoid : ?",
+    options: ["Bacillus", "Parasite", "Protozoa", "Bacteria"],
+    answer: 3,
+    explanation: "This analogy pairs an infectious disease with the type of pathogen that causes it. Influenza is caused by a virus, whereas typhoid fever is caused by bacteria (Salmonella typhi)."
+  },
+  {
+    q: "One number-series is given in which one term is wrong. Find out the wrong term. 5, 12, 19, 33, 47, 75, 104.",
+    options: ["33", "47", "75", "104"],
+    answer: 3,
+    explanation: "The differences between terms double in pairs: +7, +7, +14, +14, +28, +28. Following this rule, the last term should be 75 + 28 = 103, making 104 the wrong term."
+  }
+];
+</file>
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path="AGENTS.md">
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
+</file>
+
+<file path="eslint.config.mjs">
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  cacheComponents: true,
+  partialPrefetching: true,
+  turbopack: {
+    rules: {
+      "*.css": {
+        loaders: ["@tailwindcss/turbopack"],
+        as: "*.css",
+      },
+    },
+  },
+};
+
+export default nextConfig;
+</file>
+
+<file path="package.json">
+{
+  "name": "issb-assessor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5"
+  }
+}
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
+}
+</file>
+
+<file path="src/app/dashboard/page.tsx">
+import Shell from "@/components/Shell";
+import MenuCard from "@/components/MenuCard";
+
+export default function Dashboard() {
+  return (
+    <Shell
+      eyebrow="Dashboard"
+      title="Train with precision."
+      subtitle="Choose a module and start preparing for the ISSB."
+      back="/"
+      backLabel="Home"
+    >
+      <div className="grid gap-4 sm:grid-cols-2">
+        <MenuCard i={0} tag="Module" title="Intelligence Quotient" desc="Practice model tests and take the full timed assessment." href="/iq" color="#e11d2e" />
+        <MenuCard i={1} title="More modules" desc="New preparation modules are on the way." color="#2547b8" disabled />
+      </div>
+    </Shell>
+  );
+}
+</file>
+
+<file path="src/app/iq/practice/verbal/page.tsx">
+import Shell from "@/components/Shell";
+import MenuCard from "@/components/MenuCard";
+
+export default function VerbalList() {
+  return (
+    <Shell
+      eyebrow="Verbal IQ"
+      title="Model Tests"
+      subtitle="Select an option, check your answers and learn from the explanations."
+      back="/iq/practice"
+      backLabel="Practice"
+    >
+      <div className="grid gap-3">
+        <MenuCard i={0} tag="50 questions" title="Model Test 1" desc="Start practicing now." href="/iq/practice/verbal/1" color="#e11d2e" />
+        <MenuCard i={1} tag="50 questions" title="Model Test 2" desc="Start practicing now." href="/iq/practice/verbal/2" color="#0b1f5c" />
+      </div>
+    </Shell>
+  );
+}
+</file>
+
+<file path="src/app/iq/practice/page.tsx">
+import Shell from "@/components/Shell";
+import MenuCard from "@/components/MenuCard";
+
+export default function Practice() {
+  return (
+    <Shell
+      eyebrow="Practice"
+      title="Choose your section"
+      subtitle="Pick a type of reasoning to practice."
+      back="/iq"
+      backLabel="IQ"
+    >
+      <div className="grid gap-4 sm:grid-cols-2">
+        <MenuCard i={0} tag="Words and logic" title="Verbal IQ" desc="Series, coding, analogies, spelling, direction and more." href="/iq/practice/verbal" color="#2547b8" />
+        <MenuCard i={1} tag="Patterns" title="Non-Verbal IQ" desc="Figure and pattern based reasoning questions." href="/iq/practice/non-verbal" color="#4da6ff" />
+      </div>
+    </Shell>
+  );
+}
+</file>
+
+<file path="src/app/iq/test/page.tsx">
+import Shell from "@/components/Shell";
+
+const parts = [
+  { n: "01", t: "Verbal IQ", d: "100 questions · 60 minutes", c: "#0b1f5c" },
+  { n: "02", t: "Non-Verbal IQ", d: "36 questions · 18 minutes", c: "#4da6ff" },
+];
+
+export default function TakeTest() {
+  return (
+    <Shell
+      eyebrow="Mock assessment"
+      title="Take Test"
+      subtitle="Full timed test with a review panel at the end."
+      back="/iq"
+      backLabel="IQ"
+    >
+      <div className="grid gap-3">
+        {parts.map((p, i) => (
+          <div
+            key={p.n}
+            className="rise flex items-center gap-4 rounded-2xl border border-stone-200 bg-white p-4"
+            style={{ animationDelay: `${0.08 + i * 0.07}s` }}
+          >
+            <span className="font-serif text-3xl font-bold" style={{ color: p.c }}>{p.n}</span>
+            <div>
+              <b className="block font-serif text-lg leading-snug">{p.t}</b>
+              <p className="text-xs text-stone-500 sm:text-sm">{p.d}</p>
+            </div>
+          </div>
+        ))}
+        <p className="rise rounded-2xl border border-dashed border-[#e11d2e]/40 bg-white p-4 text-sm text-stone-600" style={{ animationDelay: ".25s" }}>
+          <b className="text-[#e11d2e]">Coming soon.</b> The review panel will show your score and a short explanation for every wrong answer.
+        </p>
+      </div>
+    </Shell>
+  );
+}
+</file>
+
+<file path="src/app/iq/page.tsx">
+import Shell from "@/components/Shell";
+import MenuCard from "@/components/MenuCard";
+
+export default function IQ() {
+  return (
+    <Shell
+      eyebrow="IQ"
+      title="Intelligence Quotient"
+      subtitle="Sharpen your verbal and non-verbal reasoning."
+      back="/dashboard"
+      backLabel="Dashboard"
+    >
+      <div className="grid gap-4 sm:grid-cols-2">
+        <MenuCard i={0} tag="Self study" title="Practice" desc="Solve model tests at your own pace with instant checking." href="/iq/practice" color="#e11d2e" />
+        <MenuCard i={1} tag="Timed" title="Take Test" desc="100 Verbal (60 min) followed by 36 Non-Verbal (18 min)." href="/iq/test" color="#4da6ff" />
+      </div>
+    </Shell>
+  );
+}
+</file>
+
+<file path="src/app/layout.tsx">
+import type { Metadata, Viewport } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600", "800"], variable: "--font-playfair" });
+
+export const metadata: Metadata = {
+  title: "ISSB Assessor",
+  description: "Preparation for the ISSB with Precision",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="antialiased">{children}</body>
+    </html>
+  );
+}
+</file>
+
+<file path="src/app/page.tsx">
+import Link from "next/link";
+import Image from "next/image";
+
+const logos = [
+  { src: "/logos/swords.jpg", c: "#e11d2e", alt: "Swords" },
+  { src: "/logos/anchor.jpg", c: "#0b1f5c", alt: "Anchor" },
+  { src: "/logos/eagle.jpg", c: "#4da6ff", alt: "Eagle" },
+];
+
+export default function Landing() {
+  return (
+    <main className="mx-auto flex min-h-[100dvh] max-w-3xl flex-col items-center justify-center px-5 py-14 text-center">
+      <h1 className="font-serif text-6xl font-extrabold leading-none tracking-tight sm:text-8xl">
+        ISSB
+        <span className="mt-3 block text-lg font-semibold uppercase tracking-[.45em] text-stone-500 sm:text-2xl sm:tracking-[.5em]">
+          Assessor
+        </span>
+      </h1>
+
+      <div className="my-7 h-[3px] w-40 rounded bg-gradient-to-r from-[#e11d2e] via-[#0b1f5c] to-[#4da6ff]" />
+
+      <div className="my-10 flex items-center justify-center gap-4 sm:my-12 sm:gap-10">
+        {logos.map((l) => (
+          <div
+            key={l.alt}
+            className="relative grid h-24 w-24 place-items-center rounded-full p-5 transition duration-500 hover:-translate-y-2 hover:scale-105 sm:h-36 sm:w-36 sm:p-6"
+            style={{
+              background: `radial-gradient(circle at 50% 38%, ${l.c}38, transparent 68%)`,
+              boxShadow: `inset 0 0 0 1px ${l.c}73, 0 30px 50px -28px ${l.c}`,
+            }}
+          >
+            <span
+              className="pointer-events-none absolute -inset-2 animate-[spin_40s_linear_infinite] rounded-full border border-dashed"
+              style={{ borderColor: `${l.c}66` }}
+            />
+            <Image src={l.src} alt={l.alt} width={110} height={110} className="object-contain mix-blend-multiply" priority />
+          </div>
+        ))}
+      </div>
+
+      <p className="text-[11px] font-semibold uppercase tracking-[.22em] text-stone-500 sm:text-xs sm:tracking-[.28em]">
+        Preparation for the ISSB with <b className="font-extrabold text-[#e11d2e]">Precision</b>
+      </p>
+
+      <Link
+        href="/dashboard"
+        className="mt-8 rounded-full bg-black px-9 py-4 text-sm font-semibold uppercase tracking-[.18em] text-white transition hover:-translate-y-0.5 hover:shadow-[0_0_0_5px_rgba(77,166,255,.35)] active:scale-95"
+      >
+        Get Started →
+      </Link>
+
+      <p className="mx-auto mt-9 max-w-md text-[11px] leading-relaxed text-stone-500">
+        ISSB Assessor is an independent practice tool. It is not affiliated with, endorsed by, or connected to the Bangladesh Armed Forces or the ISSB.
+      </p>
+    </main>
+  );
+}
+</file>
+
+<file path="src/components/MenuCard.tsx">
+import Link from "next/link";
+import type { CSSProperties } from "react";
+
+export default function MenuCard({
+  title,
+  desc,
+  href,
+  color,
+  tag,
+  i = 0,
+  disabled,
+}: {
+  title: string;
+  desc: string;
+  href?: string;
+  color: string;
+  tag?: string;
+  i?: number;
+  disabled?: boolean;
+}) {
+  const body = (
+    <div
+      className={`group rise relative flex items-center gap-4 overflow-hidden rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(0,0,0,.5)] transition duration-300 ${
+        disabled ? "opacity-55" : "hover:-translate-y-0.5 hover:border-[var(--c)] hover:shadow-[0_18px_36px_-22px_var(--c)] active:scale-[.985]"
+      }`}
+      style={{ "--c": color, animationDelay: `${0.08 + i * 0.07}s` } as CSSProperties}
+    >
+      <span className="h-11 w-1 shrink-0 rounded-full" style={{ background: color }} />
+
+      <div className="min-w-0 flex-1">
+        <div className="text-[10px] font-bold uppercase tracking-[.2em]" style={{ color }}>
+          {disabled ? "Coming soon" : tag ?? "Open"}
+        </div>
+        <b className="block truncate font-serif text-lg leading-snug">{title}</b>
+        <p className="truncate text-xs text-stone-500 sm:text-sm">{desc}</p>
+      </div>
+
+      {!disabled && (
+        <span
+          className="grid h-8 w-8 shrink-0 place-items-center rounded-full border text-sm transition duration-300 group-hover:translate-x-1 group-hover:text-white"
+          style={{ borderColor: `${color}55`, color }}
+        >
+          →
+        </span>
+      )}
+    </div>
+  );
+
+  if (disabled || !href) return <div className="cursor-default">{body}</div>;
+  return <Link href={href}>{body}</Link>;
+}
+</file>
+
+<file path="src/components/Shell.tsx">
+import Link from "next/link";
+
+export default function Shell({
+  title,
+  subtitle,
+  eyebrow,
+  back,
+  backLabel = "Back",
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  eyebrow?: string;
+  back?: string;
+  backLabel?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <main className="mx-auto max-w-2xl px-4 pb-16 pt-5 sm:px-5 sm:pt-8">
+      {back && (
+        <Link
+          href={back}
+          className="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-stone-600 transition hover:-translate-x-0.5 hover:border-black hover:text-black"
+        >
+          ← {backLabel}
+        </Link>
+      )}
+
+      <header className="rise mt-5">
+        {eyebrow && (
+          <div className="mb-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.25em] text-stone-500">
+            <span className="flex gap-1">
+              <i className="h-1.5 w-1.5 rounded-full bg-[#e11d2e]" />
+              <i className="h-1.5 w-1.5 rounded-full bg-[#0b1f5c]" />
+              <i className="h-1.5 w-1.5 rounded-full bg-[#4da6ff]" />
+            </span>
+            {eyebrow}
+          </div>
+        )}
+        <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{title}</h1>
+        {subtitle && <p className="mt-1.5 text-sm text-stone-500">{subtitle}</p>}
+        <div className="mt-4 h-[3px] w-20 rounded bg-gradient-to-r from-[#e11d2e] via-[#0b1f5c] to-[#4da6ff]" />
+      </header>
+
+      <div className="mt-6">{children}</div>
+    </main>
+  );
+}
+</file>
+
+<file path="src/data/nonverbal/nv1.ts">
+// Correct answers for questions 1 to 26
+const key: number[] = [
+  5, 2, 5, 3, 1, 2, 5, 3, 1, 5,
+  3, 2, 3, 4, 4, 5, 4, 4, 4, 3,
+  6, 8, 1, 2, 4, 4,
+];
+
+// Number of options shown in each question image
+const opts: number[] = [
+  5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+  5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+  6, 8, 5, 5, 4, 5,
+];
+
+export const nv1 = key.map((a, i) => ({
+  no: i + 1,
+  q: `Question ${i + 1}`,
+  image: `/nonverbal-t1/q${String(i + 1).padStart(2, "0")}.png`,
+  options: Array.from({ length: opts[i] }, (_, j) => String(j + 1)),
+  answer: a - 1, // stored as 0-based index
+}));
+</file>
+
+<file path="src/app/iq/practice/non-verbal/page.tsx">
+import Shell from "@/components/Shell";
+import MenuCard from "@/components/MenuCard";
+
+export default function NonVerbalList() {
+  return (
+    <Shell
+      eyebrow="Non-Verbal IQ"
+      title="Model Tests"
+      subtitle="Pattern and figure based practice."
+      back="/iq/practice"
+      backLabel="Practice"
+    >
+      <div className="grid gap-3">
+        <MenuCard i={0} tag="26 questions" title="Model Test 1" desc="Start practicing now." href="/iq/practice/non-verbal/1" color="#4da6ff" />
+      </div>
+    </Shell>
+  );
+}
+</file>
+
+<file path="src/app/iq/practice/verbal/[id]/page.tsx">
+import PracticeTest from "@/components/PracticeTest";
+import { mt1 } from "@/data/verbal/mt1";
+import { mt2 } from "@/data/verbal/mt2";
+
+const tests: Record<string, typeof mt1> = { "1": mt1, "2": mt2 };
+
+export async function generateStaticParams() {
+  return Object.keys(tests).map((id) => ({ id }));
+}
+
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const qs = tests[id];
+
+  if (!qs) return <p className="p-10">Test not found.</p>;
+
+  return <PracticeTest title={`Model Test ${id}`} questions={qs} back="/iq/practice/verbal" />;
+}
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #fafaf9;
+  color: #0a0a0a;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background-image:
+    radial-gradient(60% 40% at 50% -5%, rgba(77, 166, 255, 0.14), transparent),
+    radial-gradient(40% 30% at 10% 0, rgba(225, 29, 46, 0.08), transparent);
+  background-repeat: no-repeat;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.rise {
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+</file>
+
+<file path="src/components/PracticeTest.tsx">
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+
+type Question = {
+  q: string;
+  image?: string;
+  options: string[];
+  answer: number;
+  explanation?: string;
+};
+const L = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+export default function PracticeTest({
+  title,
+  questions,
+  back,
+}: {
+  title: string;
+  questions: Question[];
+  back: string;
+}) {
+  const [ans, setAns] = useState<Record<number, number>>({});
+  const [done, setDone] = useState(false);
+  const [onlyWrong, setOnlyWrong] = useState(false);
+
+  const total = questions.length;
+  const answered = Object.keys(ans).length;
+  const score = questions.filter((q, i) => ans[i] === q.answer).length;
+  const pct = Math.round((score / total) * 100);
+  const circ = 2 * Math.PI * 18;
+
+  const top = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const check = () => { setDone(true); top(); };
+  const retry = () => { setAns({}); setDone(false); setOnlyWrong(false); top(); };
+
+  const visible = questions.map((_, i) => i).filter((i) => !(done && onlyWrong) || ans[i] !== questions[i].answer);
+
+  return (
+    <main className="mx-auto max-w-3xl px-4 pb-32 sm:px-5">
+      {/* sticky top bar */}
+      <div className="sticky top-0 z-10 -mx-4 bg-[#fafaf9]/90 pt-[env(safe-area-inset-top)] backdrop-blur sm:-mx-5">
+        <div className="h-1 bg-stone-200">
+          <div
+            className="h-full bg-gradient-to-r from-[#e11d2e] via-[#2547b8] to-[#4da6ff] transition-all duration-300"
+            style={{ width: `${done ? 100 : (answered / total) * 100}%` }}
+          />
+        </div>
+        <div className="flex items-center justify-between px-4 py-2 text-xs sm:px-5">
+          <Link href={back} className="font-semibold text-stone-500 transition hover:text-black">← Model Tests</Link>
+          <span className="rounded-full bg-black px-3 py-1 font-semibold text-white">
+            {done ? `${score}/${total}` : `${answered}/${total}`}
+          </span>
+        </div>
+      </div>
+
+      <h1 className="mb-4 mt-4 font-serif text-3xl font-bold sm:text-4xl">{title}</h1>
+
+      {/* compact scoreboard */}
+      {done && (
+        <div className="rise relative mb-5 overflow-hidden rounded-2xl bg-[#0b1f5c] p-4 text-white shadow-[0_20px_40px_-24px_#0b1f5c]">
+          <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#e11d2e] via-white/70 to-[#4da6ff]" />
+          <div className="flex items-center gap-4">
+            <div className="relative h-14 w-14 shrink-0">
+              <svg viewBox="0 0 44 44" className="h-14 w-14 -rotate-90">
+                <circle cx="22" cy="22" r="18" fill="none" stroke="rgba(255,255,255,.18)" strokeWidth="4" />
+                <circle cx="22" cy="22" r="18" fill="none" stroke="#4da6ff" strokeWidth="4" strokeLinecap="round"
+                  strokeDasharray={circ} strokeDashoffset={circ - (circ * pct) / 100} />
+              </svg>
+              <span className="absolute inset-0 grid place-items-center text-[11px] font-bold">{pct}%</span>
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] font-semibold uppercase tracking-[.25em] text-white/60">Your Score</div>
+              <div className="leading-none">
+                <span className="font-serif text-3xl font-bold">{score}</span>
+                <span className="text-sm text-white/60"> / {total}</span>
+              </div>
+              <div className="mt-1.5 flex gap-2 text-[11px] font-semibold">
+                <span className="rounded-full bg-green-500/25 px-2 py-0.5 text-green-300">✓ {score}</span>
+                <span className="rounded-full bg-[#e11d2e]/35 px-2 py-0.5 text-red-200">✗ {total - score}</span>
+              </div>
+            </div>
+
+            <div className="flex shrink-0 flex-col gap-2">
+              <button
+                onClick={retry}
+                className="rounded-full bg-[#4da6ff] px-4 py-2 text-[11px] font-bold uppercase tracking-[.15em] text-[#0b1f5c] transition hover:brightness-110 active:scale-95"
+              >
+                Retry
+              </button>
+              <button
+                onClick={() => setOnlyWrong(!onlyWrong)}
+                className={`rounded-full bg-[#e11d2e] px-4 py-2 text-[11px] font-bold uppercase tracking-[.15em] text-white transition hover:brightness-110 active:scale-95 ${
+                  onlyWrong ? "ring-2 ring-white ring-offset-2 ring-offset-[#0b1f5c]" : ""
+                }`}
+              >
+                Wrong only
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {visible.length === 0 && (
+        <div className="rounded-2xl border border-green-600 bg-green-50 p-6 text-center font-semibold text-green-700">
+          Perfect score. No wrong answers!
+        </div>
+      )}
+
+      {visible.map((i) => {
+        const q = questions[i];
+        const correct = ans[i] === q.answer;
+        const skipped = ans[i] === undefined;
+        // সব অপশন শুধু সংখ্যা হলে পাশাপাশি ছোট গ্রিড বক্স দেখাবে
+        const isCompactGrid = q.options.every((o) => /^\d+$/.test(o.trim()));
+
+        return (
+          <section
+            key={i}
+            className={`mb-4 rounded-2xl border bg-white p-4 shadow-[0_10px_30px_-22px_rgba(0,0,0,.5)] transition sm:p-5 ${
+              done ? (correct ? "border-green-600" : "border-[#e11d2e]") : "border-stone-200"
+            }`}
+          >
+            <div className="mb-4 flex gap-3">
+              <span
+                className={`grid h-8 min-w-8 place-items-center rounded-lg px-2 text-xs font-bold text-white ${
+                  done ? (correct ? "bg-green-600" : "bg-[#e11d2e]") : "bg-black"
+                }`}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p className="pt-0.5 font-semibold leading-relaxed">{q.q}</p>
+            </div>
+
+            {q.image && (
+              <div className="mb-4 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-2">
+                <img
+                  src={q.image}
+                  alt={`Question ${i + 1} figure`}
+                  className="mx-auto max-h-72 w-auto object-contain"
+                />
+              </div>
+            )}
+
+            {isCompactGrid ? (
+              <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+                {q.options.map((o, j) => {
+                  const picked = ans[i] === j;
+                  let cls = "border-stone-200 bg-stone-50/70 text-stone-800 hover:border-[#4da6ff] hover:bg-sky-50/60";
+                  if (!done && picked) cls = "border-[#0b1f5c] bg-[#0b1f5c] text-white shadow-[0_8px_20px_-10px_#0b1f5c]";
+                  if (done && j === q.answer) cls = "border-green-600 bg-green-50 text-green-800";
+                  if (done && picked && j !== q.answer) cls = "border-[#e11d2e] bg-red-50 text-[#e11d2e]";
+
+                  return (
+                    <button
+                      key={j}
+                      disabled={done}
+                      onClick={() => setAns({ ...ans, [i]: j })}
+                      className={`flex h-11 items-center justify-center gap-1.5 rounded-xl border font-bold transition active:scale-[.97] ${cls}`}
+                    >
+                      <span>{o}</span>
+                      {done && j === q.answer && <span className="text-xs text-green-600">✓</span>}
+                      {done && picked && j !== q.answer && <span className="text-xs text-[#e11d2e]">✗</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            ) : (
+              q.options.map((o, j) => {
+                const picked = ans[i] === j;
+                let cls = "border-stone-200 hover:border-[#4da6ff] hover:bg-sky-50/60";
+                let badge = "bg-stone-100 text-stone-600";
+                if (!done && picked) { cls = "border-[#0b1f5c] bg-[#0b1f5c] text-white shadow-[0_10px_24px_-12px_#0b1f5c]"; badge = "bg-[#4da6ff] text-black"; }
+                if (done && j === q.answer) { cls = "border-green-600 bg-green-50"; badge = "bg-green-600 text-white"; }
+                if (done && picked && j !== q.answer) { cls = "border-[#e11d2e] bg-red-50"; badge = "bg-[#e11d2e] text-white"; }
+                return (
+                  <button
+                    key={j}
+                    disabled={done}
+                    onClick={() => setAns({ ...ans, [i]: j })}
+                    className={`mt-2 flex min-h-12 w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition active:scale-[.99] ${cls}`}
+                  >
+                    <b className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs ${badge}`}>{L[j]}</b>
+                    <span className="flex-1">{o}</span>
+                    {done && j === q.answer && <span className="font-bold text-green-600">✓</span>}
+                    {done && picked && j !== q.answer && <span className="font-bold text-[#e11d2e]">✗</span>}
+                  </button>
+                );
+              })
+            )}
+
+            {/* explanation only for wrong or unanswered (when available or skipped) */}
+            {done && !correct && (skipped || q.explanation) && (
+              <div className="mt-3 overflow-hidden rounded-xl border border-[#4da6ff]/40 bg-sky-50 text-sm leading-relaxed">
+                <div className="h-[3px] bg-gradient-to-r from-[#e11d2e] via-[#2547b8] to-[#4da6ff]" />
+                <div className="p-3">
+                  {skipped && <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#e11d2e]">Not answered</p>}
+                  {q.explanation && (
+                    <>
+                      <b className="text-[#0b1f5c]">Explanation:</b> {q.explanation}
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+          </section>
+        );
+      })}
+
+      {!done && (
+        <div className="fixed inset-x-0 bottom-0 z-20 border-t border-stone-200 bg-white/90 px-4 pb-[max(env(safe-area-inset-bottom),12px)] pt-3 backdrop-blur">
+          <div className="mx-auto max-w-3xl">
+            <button
+              onClick={check}
+              className="w-full rounded-full bg-black py-4 text-sm font-semibold uppercase tracking-[.18em] text-white transition hover:shadow-[0_0_0_5px_rgba(77,166,255,.35)] active:scale-[.99]"
+            >
+              Check Answers · {answered}/{total}
+            </button>
+          </div>
+        </div>
+      )}
+    </main>
+  );
+}
+</file>
+
+</files>
