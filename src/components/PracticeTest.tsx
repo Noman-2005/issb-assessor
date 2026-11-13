@@ -2,8 +2,14 @@
 import { useState } from "react";
 import Link from "next/link";
 
-type Question = { q: string; options: string[]; answer: number; explanation: string };
-const L = ["A", "B", "C", "D", "E", "F"];
+type Question = {
+  q: string;
+  image?: string;
+  options: string[];
+  answer: number;
+  explanation?: string;
+};
+const L = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 export default function PracticeTest({
   title,
@@ -50,7 +56,7 @@ export default function PracticeTest({
 
       <h1 className="mb-4 mt-4 font-serif text-3xl font-bold sm:text-4xl">{title}</h1>
 
-           {/* compact scoreboard */}
+      {/* compact scoreboard */}
       {done && (
         <div className="rise relative mb-5 overflow-hidden rounded-2xl bg-[#0b1f5c] p-4 text-white shadow-[0_20px_40px_-24px_#0b1f5c]">
           <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#e11d2e] via-white/70 to-[#4da6ff]" />
@@ -106,6 +112,9 @@ export default function PracticeTest({
         const q = questions[i];
         const correct = ans[i] === q.answer;
         const skipped = ans[i] === undefined;
+        // সব অপশন শুধু সংখ্যা হলে পাশাপাশি ছোট গ্রিড বক্স দেখাবে
+        const isCompactGrid = q.options.every((o) => /^\d+$/.test(o.trim()));
+
         return (
           <section
             key={i}
@@ -124,35 +133,74 @@ export default function PracticeTest({
               <p className="pt-0.5 font-semibold leading-relaxed">{q.q}</p>
             </div>
 
-            {q.options.map((o, j) => {
-              const picked = ans[i] === j;
-              let cls = "border-stone-200 hover:border-[#4da6ff] hover:bg-sky-50/60";
-              let badge = "bg-stone-100 text-stone-600";
-              if (!done && picked) { cls = "border-[#0b1f5c] bg-[#0b1f5c] text-white shadow-[0_10px_24px_-12px_#0b1f5c]"; badge = "bg-[#4da6ff] text-black"; }
-              if (done && j === q.answer) { cls = "border-green-600 bg-green-50"; badge = "bg-green-600 text-white"; }
-              if (done && picked && j !== q.answer) { cls = "border-[#e11d2e] bg-red-50"; badge = "bg-[#e11d2e] text-white"; }
-              return (
-                <button
-                  key={j}
-                  disabled={done}
-                  onClick={() => setAns({ ...ans, [i]: j })}
-                  className={`mt-2 flex min-h-12 w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition active:scale-[.99] ${cls}`}
-                >
-                  <b className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs ${badge}`}>{L[j]}</b>
-                  <span className="flex-1">{o}</span>
-                  {done && j === q.answer && <span className="font-bold text-green-600">✓</span>}
-                  {done && picked && j !== q.answer && <span className="font-bold text-[#e11d2e]">✗</span>}
-                </button>
-              );
-            })}
+            {q.image && (
+              <div className="mb-4 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-2">
+                <img
+                  src={q.image}
+                  alt={`Question ${i + 1} figure`}
+                  className="mx-auto max-h-72 w-auto object-contain"
+                />
+              </div>
+            )}
 
-            {/* explanation only for wrong or unanswered */}
-            {done && !correct && (
+            {isCompactGrid ? (
+              <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+                {q.options.map((o, j) => {
+                  const picked = ans[i] === j;
+                  let cls = "border-stone-200 bg-stone-50/70 text-stone-800 hover:border-[#4da6ff] hover:bg-sky-50/60";
+                  if (!done && picked) cls = "border-[#0b1f5c] bg-[#0b1f5c] text-white shadow-[0_8px_20px_-10px_#0b1f5c]";
+                  if (done && j === q.answer) cls = "border-green-600 bg-green-50 text-green-800";
+                  if (done && picked && j !== q.answer) cls = "border-[#e11d2e] bg-red-50 text-[#e11d2e]";
+
+                  return (
+                    <button
+                      key={j}
+                      disabled={done}
+                      onClick={() => setAns({ ...ans, [i]: j })}
+                      className={`flex h-11 items-center justify-center gap-1.5 rounded-xl border font-bold transition active:scale-[.97] ${cls}`}
+                    >
+                      <span>{o}</span>
+                      {done && j === q.answer && <span className="text-xs text-green-600">✓</span>}
+                      {done && picked && j !== q.answer && <span className="text-xs text-[#e11d2e]">✗</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            ) : (
+              q.options.map((o, j) => {
+                const picked = ans[i] === j;
+                let cls = "border-stone-200 hover:border-[#4da6ff] hover:bg-sky-50/60";
+                let badge = "bg-stone-100 text-stone-600";
+                if (!done && picked) { cls = "border-[#0b1f5c] bg-[#0b1f5c] text-white shadow-[0_10px_24px_-12px_#0b1f5c]"; badge = "bg-[#4da6ff] text-black"; }
+                if (done && j === q.answer) { cls = "border-green-600 bg-green-50"; badge = "bg-green-600 text-white"; }
+                if (done && picked && j !== q.answer) { cls = "border-[#e11d2e] bg-red-50"; badge = "bg-[#e11d2e] text-white"; }
+                return (
+                  <button
+                    key={j}
+                    disabled={done}
+                    onClick={() => setAns({ ...ans, [i]: j })}
+                    className={`mt-2 flex min-h-12 w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition active:scale-[.99] ${cls}`}
+                  >
+                    <b className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs ${badge}`}>{L[j]}</b>
+                    <span className="flex-1">{o}</span>
+                    {done && j === q.answer && <span className="font-bold text-green-600">✓</span>}
+                    {done && picked && j !== q.answer && <span className="font-bold text-[#e11d2e]">✗</span>}
+                  </button>
+                );
+              })
+            )}
+
+            {/* explanation only for wrong or unanswered (when available or skipped) */}
+            {done && !correct && (skipped || q.explanation) && (
               <div className="mt-3 overflow-hidden rounded-xl border border-[#4da6ff]/40 bg-sky-50 text-sm leading-relaxed">
                 <div className="h-[3px] bg-gradient-to-r from-[#e11d2e] via-[#2547b8] to-[#4da6ff]" />
                 <div className="p-3">
                   {skipped && <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#e11d2e]">Not answered</p>}
-                  <b className="text-[#0b1f5c]">Explanation:</b> {q.explanation}
+                  {q.explanation && (
+                    <>
+                      <b className="text-[#0b1f5c]">Explanation:</b> {q.explanation}
+                    </>
+                  )}
                 </div>
               </div>
             )}

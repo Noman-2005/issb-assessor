@@ -10,8 +10,8 @@ export default function NonVerbalList() {
       back="/iq/practice"
       backLabel="Practice"
     >
-      <div className="grid gap-4 sm:grid-cols-2">
-        <MenuCard i={0} title="Model Test 1" desc="Questions will be added soon." color="#4da6ff" disabled />
+      <div className="grid gap-3">
+        <MenuCard i={0} tag="26 questions" title="Model Test 1" desc="Start practicing now." href="/iq/practice/non-verbal/1" color="#4da6ff" />
       </div>
     </Shell>
   );
