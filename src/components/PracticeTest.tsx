@@ -33,6 +33,16 @@ export default function PracticeTest({
   const top = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const check = () => { setDone(true); top(); };
   const retry = () => { setAns({}); setDone(false); setOnlyWrong(false); top(); };
+    // Tap an option to select it; tap the selected option again to undo.
+  const pick = (i: number, j: number) => {
+    if (done) return;
+    setAns((prev) => {
+      const next = { ...prev };
+      if (prev[i] === j) delete next[i];
+      else next[i] = j;
+      return next;
+    });
+  };
 
   const visible = questions.map((_, i) => i).filter((i) => !(done && onlyWrong) || ans[i] !== questions[i].answer);
 
@@ -156,7 +166,7 @@ export default function PracticeTest({
                     <button
                       key={j}
                       disabled={done}
-                      onClick={() => setAns({ ...ans, [i]: j })}
+                      onClick={() => pick(i, j)}
                       className={`flex h-11 items-center justify-center gap-1.5 rounded-xl border font-bold transition active:scale-[.97] ${cls}`}
                     >
                       <span>{o}</span>
@@ -178,7 +188,7 @@ export default function PracticeTest({
                   <button
                     key={j}
                     disabled={done}
-                    onClick={() => setAns({ ...ans, [i]: j })}
+                    onClick={() => pick(i, j)}
                     className={`mt-2 flex min-h-12 w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition active:scale-[.99] ${cls}`}
                   >
                     <b className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs ${badge}`}>{L[j]}</b>

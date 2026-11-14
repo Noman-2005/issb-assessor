@@ -139,18 +139,33 @@ export default function FullIQTest() {
   const answeredNonVerbal = Object.keys(nonVerbalAnswers).length;
   const nonVerbalTotal = nonVerbalQuestions.length;
 
+  // Selecting the already-selected option again clears the answer.
   function selectVerbalAnswer(optionIndex: number) {
-    setVerbalAnswers((previous) => ({
-      ...previous,
-      [currentQuestion]: optionIndex,
-    }));
+    setVerbalAnswers((previous) => {
+      const next = { ...previous };
+
+      if (previous[currentQuestion] === optionIndex) {
+        delete next[currentQuestion];
+      } else {
+        next[currentQuestion] = optionIndex;
+      }
+
+      return next;
+    });
   }
 
   function selectNonVerbalAnswer(option: number) {
-    setNonVerbalAnswers((previous) => ({
-      ...previous,
-      [currentQuestion]: option,
-    }));
+    setNonVerbalAnswers((previous) => {
+      const next = { ...previous };
+
+      if (previous[currentQuestion] === option) {
+        delete next[currentQuestion];
+      } else {
+        next[currentQuestion] = option;
+      }
+
+      return next;
+    });
   }
 
   function finishTest() {
@@ -182,257 +197,134 @@ export default function FullIQTest() {
     );
   }
 
-  // Premium instructions screen.
+   // Premium instructions screen.
   if (phase === "ready") {
+    const parts = [
+      {
+        no: "01",
+        name: "Verbal IQ",
+        count: verbalQuestions.length,
+        time: 60,
+        color: "#0b1f5c",
+      },
+      {
+        no: "02",
+        name: "Non-Verbal IQ",
+        count: nonVerbalTotal,
+        time: 18,
+        color: "#4da6ff",
+      },
+    ];
+
+    const rules = [
+      { text: "A 30-second break separates the two sections.", color: "#0b1f5c" },
+      { text: "You can change your answers until a section ends.", color: "#4da6ff" },
+      {
+        text: "Each section submits automatically when time runs out. The timer cannot be paused.",
+        color: "#e11d2e",
+      },
+    ];
+
     return (
-      <div className="relative isolate overflow-hidden rounded-[28px] border border-[#dce5f2] bg-white shadow-[0_24px_80px_rgba(11,31,92,0.12)]">
+      <div className="relative overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-[0_30px_80px_-40px_rgba(11,31,92,0.35)]">
+        {/* soft theme glow */}
+        <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#4da6ff]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-28 -left-20 h-64 w-64 rounded-full bg-[#e11d2e]/[0.06] blur-3xl" />
 
-        {/* Decorative Background */}
-        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -right-24 -top-28 h-80 w-80 rounded-full bg-[#4da6ff]/10 blur-3xl" />
-          <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-[#e11d2e]/[0.07] blur-3xl" />
-        </div>
+        {/* top accent */}
+        <div className="h-[3px] w-full bg-gradient-to-r from-[#e11d2e] via-[#0b1f5c] to-[#4da6ff]" />
 
-        {/* Top Accent */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-[#0b1f5c] via-[#4da6ff] to-[#e11d2e]" />
-
-        <div className="p-5 sm:p-8 lg:p-10">
-
-          {/* Heading */}
-          <div className="mx-auto max-w-3xl text-center">
-
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-[#4da6ff]/25 bg-[#4da6ff]/10 text-[#0b1f5c] shadow-sm">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="h-8 w-8"
-                stroke="currentColor"
-                strokeWidth="1.7"
-              >
-                <path
-                  d="M12 3L20 7V12C20 17 16.5 20 12 22C7.5 20 4 17 4 12V7L12 3Z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M9 12L11 14L15.5 9.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-
-            <p className="mt-5 text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#e11d2e]">
-              ISSB · FULL IQ ASSESSMENT
+        <div className="relative px-5 py-9 sm:px-10 sm:py-12">
+          {/* intro */}
+          <div className="text-center">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#e11d2e]">
+              Before you begin
             </p>
-
-            <h2 className="mt-3 font-serif text-3xl font-black tracking-tight text-[#0b1f5c] sm:text-4xl lg:text-5xl">
-              Test Instructions
+            <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-[#0b1f5c] sm:text-4xl">
+              Ready when you are
             </h2>
-
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
-              Welcome to your Full IQ Assessment. Review the test
-              structure and instructions carefully before starting.
+            <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-stone-500">
+              Two timed sections. Once you begin, the clock keeps running.
             </p>
           </div>
 
-          {/* Test Overview Cards */}
-          <div className="mt-9 grid gap-4 md:grid-cols-2">
+          {/* the two sections */}
+          <div className="mt-9 grid overflow-hidden rounded-2xl border border-stone-200 bg-white sm:grid-cols-2">
+            {parts.map((p, i) => (
+              <div
+                key={p.no}
+                className={`relative p-6 sm:p-7 ${
+                  i === 1 ? "border-t border-stone-200 sm:border-l sm:border-t-0" : ""
+                }`}
+              >
+                <span
+                  className="absolute inset-y-0 left-0 w-[3px]"
+                  style={{ background: p.color }}
+                />
 
-            {/* Verbal Card */}
-            <div className="group relative overflow-hidden rounded-2xl border border-[#0b1f5c]/15 bg-gradient-to-br from-[#0b1f5c]/[0.07] to-white p-5 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
-
-              <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#0b1f5c]/[0.06] transition-transform duration-500 group-hover:scale-150" />
-
-              <div className="relative flex items-start justify-between gap-3">
-
-                <div>
-                  <span className="inline-flex rounded-full border border-[#0b1f5c]/15 bg-white px-3 py-1 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#0b1f5c]">
-                    Part 01
-                  </span>
-
-                  <h3 className="mt-4 font-serif text-2xl font-bold text-[#0b1f5c]">
-                    Verbal IQ Test
-                  </h3>
-
-                  <p className="mt-2 text-xs leading-6 text-slate-500">
-                    Evaluate your verbal reasoning, vocabulary,
-                    comprehension and logical thinking.
-                  </p>
-                </div>
-
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0b1f5c] text-white shadow-lg shadow-[#0b1f5c]/20">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="h-6 w-6"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                  >
-                    <path
-                      d="M5 4.5H19V16H9L5 20V4.5Z"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9 9H15M9 12.5H15"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="relative mt-6 grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-[#0b1f5c]/10 bg-white/90 p-3">
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400">
-                    Questions
-                  </p>
-                  <p className="mt-1 text-2xl font-black text-[#0b1f5c]">
-                    {verbalQuestions.length}
-                  </p>
-                </div>
-
-                <div className="rounded-xl border border-[#0b1f5c]/10 bg-white/90 p-3">
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400">
-                    Time Limit
-                  </p>
-                  <p className="mt-1 text-2xl font-black text-[#0b1f5c]">
-                    60 <span className="text-xs font-semibold">MIN</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Non-Verbal Card */}
-            <div className="group relative overflow-hidden rounded-2xl border border-[#4da6ff]/25 bg-gradient-to-br from-[#4da6ff]/[0.12] to-white p-5 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
-
-              <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#4da6ff]/10 transition-transform duration-500 group-hover:scale-150" />
-
-              <div className="relative flex items-start justify-between gap-3">
-
-                <div>
-                  <span className="inline-flex rounded-full border border-[#4da6ff]/30 bg-white px-3 py-1 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#0b1f5c]">
-                    Part 02
-                  </span>
-
-                  <h3 className="mt-4 font-serif text-2xl font-bold text-[#0b1f5c]">
-                    Non-Verbal IQ Test
-                  </h3>
-
-                  <p className="mt-2 text-xs leading-6 text-slate-500">
-                    Assess your visual reasoning, pattern recognition
-                    and analytical problem-solving skills.
-                  </p>
-                </div>
-
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#4da6ff] text-[#0b1f5c] shadow-lg shadow-[#4da6ff]/25">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="h-6 w-6"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                  >
-                    <rect x="3" y="3" width="7" height="7" rx="1" />
-                    <rect x="14" y="3" width="7" height="7" rx="1" />
-                    <rect x="3" y="14" width="7" height="7" rx="1" />
-                    <path
-                      d="M14 17.5H21M17.5 14V21"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="relative mt-6 grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-[#4da6ff]/20 bg-white/90 p-3">
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400">
-                    Questions
-                  </p>
-                  <p className="mt-1 text-2xl font-black text-[#0b1f5c]">
-                    {nonVerbalTotal}
-                  </p>
-                </div>
-
-                <div className="rounded-xl border border-[#4da6ff]/20 bg-white/90 p-3">
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400">
-                    Time Limit
-                  </p>
-                  <p className="mt-1 text-2xl font-black text-[#0b1f5c]">
-                    18 <span className="text-xs font-semibold">MIN</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Instructions */}
-          <div className="mt-7 rounded-2xl border border-slate-200 bg-white/90 p-5 sm:p-7">
-
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#4da6ff]/15 text-[#0b1f5c]">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-5 w-5"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
+                <p
+                  className="text-[10px] font-extrabold uppercase tracking-[0.25em]"
+                  style={{ color: p.color }}
                 >
-                  <circle cx="12" cy="12" r="9" />
-                  <path
-                    d="M12 11V16M12 8H12.01"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-
-              <div>
-                <h3 className="font-serif text-lg font-bold text-[#0b1f5c]">
-                  Important Instructions
-                </h3>
-                <p className="mt-0.5 text-[11px] text-slate-400">
-                  Please read before proceeding
+                  Part {p.no}
                 </p>
-              </div>
-            </div>
 
-            <div className="mt-5 grid gap-x-8 gap-y-4 sm:grid-cols-2">
-              {[
-                "The assessment begins with the Verbal IQ Test.",
-                "A 30-second break will be provided after the Verbal Test.",
-                "The Non-Verbal Test starts automatically after the break.",
-                "Use the Previous, Next and question navigation buttons to move between questions.",
-                "You can change your answers anytime before the section ends.",
-                "Each section is automatically submitted when its timer reaches zero.",
-                "The assessment timer cannot be paused once the test begins.",
-                "Make sure you are ready before starting the assessment.",
-              ].map((instruction, index) => (
-                <div
-                  key={instruction}
-                  className="flex items-start gap-3"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#0b1f5c]/[0.07] text-[10px] font-extrabold text-[#0b1f5c]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                <h3 className="mt-2 font-serif text-xl font-bold text-[#0b1f5c]">
+                  {p.name}
+                </h3>
 
-                  <p className="pt-1 text-xs leading-6 text-slate-600">
-                    {instruction}
-                  </p>
+                <div className="mt-6 flex items-end gap-6">
+                  <div>
+                    <p
+                      className="font-serif text-4xl font-black leading-none"
+                      style={{ color: p.color }}
+                    >
+                      {p.count}
+                    </p>
+                    <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400">
+                      Questions
+                    </p>
+                  </div>
+
+                  <div className="h-10 w-px bg-stone-200" />
+
+                  <div>
+                    <p
+                      className="font-serif text-4xl font-black leading-none"
+                      style={{ color: p.color }}
+                    >
+                      {p.time}
+                    </p>
+                    <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400">
+                      Minutes
+                    </p>
+                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* Start Button */}
-          <div className="mt-8 text-center">
+          {/* rules */}
+          <ul className="mx-auto mt-8 max-w-md space-y-3.5">
+            {rules.map((r) => (
+              <li key={r.text} className="flex items-start gap-3">
+                <span
+                  className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full"
+                  style={{ background: r.color }}
+                />
+                <p className="text-[13px] leading-relaxed text-stone-600">{r.text}</p>
+              </li>
+            ))}
+          </ul>
 
+          {/* start */}
+          <div className="mt-10 text-center">
             <button
               type="button"
               onClick={startTest}
-              className="group inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#e11d2e] px-8 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-[0_10px_25px_rgba(225,29,46,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-[#c81727] hover:shadow-[0_15px_35px_rgba(225,29,46,0.30)] active:translate-y-0 sm:w-auto sm:min-w-[260px]"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#e11d2e] px-9 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_14px_30px_-12px_rgba(225,29,46,0.6)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#c81727] hover:shadow-[0_18px_36px_-12px_rgba(225,29,46,0.65)] active:translate-y-0 active:scale-[.98] sm:w-auto sm:min-w-[260px]"
             >
               <span>Start Test</span>
-
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -448,11 +340,10 @@ export default function FullIQTest() {
               </svg>
             </button>
 
-            <p className="mt-4 text-[10px] font-medium tracking-wide text-slate-400">
-              Your timer will only begin after clicking Start Test.
+            <p className="mt-4 text-[10px] font-medium tracking-wide text-stone-400">
+              Your timer starts only after you press Start Test.
             </p>
           </div>
-
         </div>
       </div>
     );
@@ -616,22 +507,27 @@ export default function FullIQTest() {
           )}
         </div>
 
-        {/* Verbal Question Navigation */}
-        <div className="mt-6 rounded-2xl border border-stone-200 bg-white p-4">
-          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-stone-500">
-            Question Navigation
-          </p>
+                {/* Verbal Question Navigation */}
+        <div className="mt-5 rounded-xl border border-stone-200 bg-white p-3">
+          <div className="mb-2 flex items-center justify-between">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">
+              Questions
+            </p>
+            <p className="text-[10px] font-semibold text-stone-400">
+              {answeredVerbal}/{verbalQuestions.length}
+            </p>
+          </div>
 
-          <div className="grid grid-cols-6 gap-2 sm:grid-cols-10">
+          <div className="grid grid-cols-10 gap-1 sm:grid-cols-[repeat(20,minmax(0,1fr))]">
             {verbalQuestions.map((_, index) => {
-              const answered =
-                verbalAnswers[index] !== undefined;
+              const answered = verbalAnswers[index] !== undefined;
 
               return (
                 <button
                   key={index}
+                  type="button"
                   onClick={() => setCurrentQuestion(index)}
-                  className={`h-9 rounded-lg text-xs font-bold transition ${
+                  className={`h-7 rounded-md text-[10px] font-bold transition sm:text-[11px] ${
                     currentQuestion === index
                       ? "bg-[#0b1f5c] text-white"
                       : answered
@@ -835,29 +731,27 @@ export default function FullIQTest() {
           )}
         </div>
 
-        {/* Non-Verbal Question Navigation */}
-        <div className="mt-6 rounded-2xl border border-stone-200 bg-white p-4">
-
-          <div className="mb-3 flex items-center justify-between">
-            <p className="text-xs font-bold uppercase tracking-widest text-stone-500">
-              Question Navigation
+                {/* Non-Verbal Question Navigation */}
+        <div className="mt-5 rounded-xl border border-stone-200 bg-white p-3">
+          <div className="mb-2 flex items-center justify-between">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">
+              Questions
             </p>
-
-            <p className="text-xs text-stone-400">
-              {nonVerbalTotal} Questions
+            <p className="text-[10px] font-semibold text-stone-400">
+              {answeredNonVerbal}/{nonVerbalTotal}
             </p>
           </div>
 
-          <div className="grid grid-cols-6 gap-2 sm:grid-cols-9">
+          <div className="grid grid-cols-9 gap-1 sm:grid-cols-12">
             {nonVerbalQuestions.map((_, index) => {
-              const answered =
-                nonVerbalAnswers[index] !== undefined;
+              const answered = nonVerbalAnswers[index] !== undefined;
 
               return (
                 <button
                   key={index}
+                  type="button"
                   onClick={() => setCurrentQuestion(index)}
-                  className={`h-10 rounded-lg text-xs font-bold transition ${
+                  className={`h-7 rounded-md text-[10px] font-bold transition sm:text-[11px] ${
                     currentQuestion === index
                       ? "bg-[#0b1f5c] text-white"
                       : answered
@@ -871,20 +765,18 @@ export default function FullIQTest() {
             })}
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-4 text-[10px] font-semibold text-stone-500">
-            <span className="flex items-center gap-2">
-              <i className="h-3 w-3 rounded bg-[#0b1f5c]" />
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[10px] font-medium text-stone-400">
+            <span className="flex items-center gap-1.5">
+              <i className="h-2 w-2 rounded-sm bg-[#0b1f5c]" />
               Current
             </span>
-
-            <span className="flex items-center gap-2">
-              <i className="h-3 w-3 rounded bg-[#4da6ff]/20" />
+            <span className="flex items-center gap-1.5">
+              <i className="h-2 w-2 rounded-sm bg-[#4da6ff]/40" />
               Answered
             </span>
-
-            <span className="flex items-center gap-2">
-              <i className="h-3 w-3 rounded bg-stone-100" />
-              Not Answered
+            <span className="flex items-center gap-1.5">
+              <i className="h-2 w-2 rounded-sm bg-stone-200" />
+              Pending
             </span>
           </div>
         </div>
