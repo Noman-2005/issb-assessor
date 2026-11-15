@@ -20,9 +20,9 @@ type VerbalQuestion = {
 
 type Phase = "ready" | "verbal" | "break" | "nonverbal" | "done";
 
-const VERBAL_TIME = 60 * 60;
+const VERBAL_TIME = 35 * 60;
 const BREAK_TIME = 30;
-const NONVERBAL_TIME = 18 * 60;
+const NONVERBAL_TIME = 26 * 60;
 
 function shuffle<T>(array: T[]): T[] {
   const result = [...array];
@@ -224,14 +224,14 @@ export default function FullIQTest() {
         no: "01",
         name: "Verbal IQ",
         count: verbalQuestions.length,
-        time: 60,
+        time: 35,
         color: "#0b1f5c",
       },
       {
         no: "02",
         name: "Non-Verbal IQ",
         count: nonVerbalTotal,
-        time: 18,
+        time: 26,
         color: "#4da6ff",
       },
     ];
@@ -421,7 +421,7 @@ export default function FullIQTest() {
       <div>
         <Header
           title="Verbal IQ Test"
-          subtitle={`${verbalQuestions.length} Questions · 60 Minutes`}
+          subtitle={`${verbalQuestions.length} Questions · 35 Minutes`}
         />
 
         <div className="mb-4 flex items-center justify-between text-xs font-semibold text-stone-500">
@@ -633,7 +633,7 @@ export default function FullIQTest() {
       <div>
         <Header
           title="Non-Verbal IQ Test"
-          subtitle={`${nonVerbalTotal} Questions · 18 Minutes`}
+          subtitle={`${nonVerbalTotal} Questions · 26 Minutes`}
         />
 
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-stone-500">
@@ -675,8 +675,8 @@ export default function FullIQTest() {
                         <Image
               src={question.image}
               alt={`Non-Verbal Question ${question.no}`}
-              width={1024}
-              height={1448}
+              width={question.width}
+height={question.height}
               unoptimized
               priority
               decoding="async"
@@ -684,40 +684,98 @@ export default function FullIQTest() {
               draggable={false}
             />
 
-            {optionPositions.map((position, index) => {
-              const option = index + 1;
+            {question.strip
+  ? Array.from({ length: question.strip.count }).map((_, index) => {
+      const option = index + 1;
+      const s = question.strip!;
+      const cell = s.width / s.count;
+      const selected = nonVerbalAnswers[currentQuestion] === option;
 
-              const selected =
-                nonVerbalAnswers[currentQuestion] === option;
+      return (
+        <button
+          key={option}
+          type="button"
+          aria-label={`Select option ${option}`}
+          aria-pressed={selected}
+          onClick={() => selectNonVerbalAnswer(option)}
+          className={`absolute z-10 rounded-md transition ${
+            selected
+              ? "border-[4px] border-[#e11d2e] bg-red-500/15 shadow-[0_0_0_2px_white]"
+              : "border-2 border-transparent hover:border-[#4da6ff]/80 hover:bg-blue-400/10"
+          }`}
+          style={{
+            left: `${s.left + cell * index}%`,
+            top: `${s.top}%`,
+            width: `${cell}%`,
+            height: `${s.height}%`,
+          }}
+        >
+          <span className="sr-only">Option {option}</span>
+        </button>
+      );
+    })
+    : question.zones
+  ? question.zones.map((zone, index) => {
+      const option = index + 1;
+      const selected = nonVerbalAnswers[currentQuestion] === option;
 
-              return (
-                <button
-                  key={option}
-                  type="button"
-                  aria-label={`Select option ${option}`}
-                  aria-pressed={selected}
-                  onClick={() => selectNonVerbalAnswer(option)}
-                  className={`absolute z-10 rounded-md transition ${
-                    selected
-                      ? "border-[4px] border-[#e11d2e] bg-red-500/15 shadow-[0_0_0_2px_white]"
-                      : "border-2 border-transparent hover:border-[#4da6ff]/80 hover:bg-blue-400/10"
-                  }`}
-                  style={{
-                    ...position,
-                    width: "25%",
-                    height: "11.9%",
-                  }}
-                >
-                  <span className="sr-only">
-                    Option {option}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+      return (
+        <button
+          key={option}
+          type="button"
+          aria-label={option === 1 ? "Select Set A" : "Select Set B"}
+          aria-pressed={selected}
+          onClick={() => selectNonVerbalAnswer(option)}
+          className={`absolute z-10 rounded-full transition ${
+            selected
+              ? "border-[4px] border-[#e11d2e] bg-red-500/15 shadow-[0_0_0_2px_white]"
+              : "border-2 border-transparent hover:border-[#4da6ff]/80 hover:bg-blue-400/10"
+          }`}
+          style={{
+            left: `${zone.left}%`,
+            top: `${zone.top}%`,
+            width: `${zone.width}%`,
+            height: `${zone.height}%`,
+          }}
+        >
+          <span className="sr-only">
+            {option === 1 ? "Set A" : "Set B"}
+          </span>
+        </button>
+      );
+    })
+  : optionPositions.map((position, index) => {
+      const option = index + 1;
+      const selected = nonVerbalAnswers[currentQuestion] === option;
+
+      return (
+        <button
+          key={option}
+          type="button"
+          aria-label={`Select option ${option}`}
+          aria-pressed={selected}
+          onClick={() => selectNonVerbalAnswer(option)}
+          className={`absolute z-10 rounded-md transition ${
+            selected
+              ? "border-[4px] border-[#e11d2e] bg-red-500/15 shadow-[0_0_0_2px_white]"
+              : "border-2 border-transparent hover:border-[#4da6ff]/80 hover:bg-blue-400/10"
+          }`}
+          style={{ ...position, width: "25%", height: "11.9%" }}
+        >
+          <span className="sr-only">Option {option}</span>
+        </button>
+      );
+    })}
+                   </div>
+
+          
 
           <p className="mt-3 text-center text-xs text-stone-400">
-            Click directly on any of the eight options in the image.
+                        {question.zones
+              ? "Click Set A or Set B in the image."
+              : question.strip
+              ? "Click directly on any of the five options in the image."
+              : "Click directly on any of the eight options in the image."}
           </p>
         </div>
 

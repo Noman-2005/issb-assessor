@@ -22,7 +22,7 @@ export default function IQ() {
 
         <MenuCard
           i={1}
-          tag="100 Verbal + 36 Non-Verbal"
+          tag="100 Verbal + 50 Non-Verbal"
           title="Full IQ Test"
           desc="Complete the full timed assessment in one session."
           href="/iq/test"

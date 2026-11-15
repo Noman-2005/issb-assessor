@@ -6,7 +6,7 @@ export default function TakeTest() {
     <Shell
       eyebrow="Full IQ Assessment"
       title="IQ Test"
-      subtitle="100 Verbal Questions followed by 36 Non-Verbal Questions."
+      subtitle="100 Verbal Questions followed by 50 Non-Verbal Questions."
       back="/iq"
       backLabel="IQ"
     >
