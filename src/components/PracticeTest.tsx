@@ -143,11 +143,14 @@ export default function PracticeTest({
               <p className="pt-0.5 font-semibold leading-relaxed">{q.q}</p>
             </div>
 
-            {q.image && (
+                        {q.image && (
               <div className="mb-4 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={q.image}
                   alt={`Question ${i + 1} figure`}
+                  loading={i < 4 ? "eager" : "lazy"}
+                  decoding="async"
                   className="mx-auto max-h-72 w-auto object-contain"
                 />
               </div>

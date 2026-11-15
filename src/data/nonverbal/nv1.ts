@@ -15,7 +15,7 @@ const opts: number[] = [
 export const nv1 = key.map((a, i) => ({
   no: i + 1,
   q: `Question ${i + 1}`,
-  image: `/nonverbal-t1/q${String(i + 1).padStart(2, "0")}.png`,
+    image: `/nonverbal-t1/q${String(i + 1).padStart(2, "0")}.webp`,
   options: Array.from({ length: opts[i] }, (_, j) => String(j + 1)),
   answer: a - 1, // stored as 0-based index
 }));

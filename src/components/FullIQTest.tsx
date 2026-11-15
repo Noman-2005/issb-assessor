@@ -9,6 +9,7 @@ import {
   nonVerbalQuestions,
   type NonVerbalQuestion,
 } from "@/data/nonverbal/assessment";
+import { preloadImages, preloadWhenIdle } from "@/lib/preloadImages";
 
 type VerbalQuestion = {
   q: string;
@@ -82,6 +83,25 @@ export default function FullIQTest() {
 
     setVerbalQuestions(shuffle(pool));
   }, []);
+    // Download every non-verbal figure in the background while the candidate
+  // is still working on the verbal section.
+  const testStarted = phase !== "ready";
+
+  useEffect(() => {
+    if (!testStarted) return;
+    preloadWhenIdle(nonVerbalQuestions.map((q) => q.image));
+  }, [testStarted]);
+
+  // Safety net: make sure the next few figures are ready during non-verbal.
+  useEffect(() => {
+    if (phase !== "nonverbal") return;
+
+    preloadImages(
+      nonVerbalQuestions
+        .slice(currentQuestion + 1, currentQuestion + 4)
+        .map((q) => q.image)
+    );
+  }, [phase, currentQuestion]);
 
   // Phase-based countdown.
   useEffect(() => {
@@ -652,12 +672,14 @@ export default function FullIQTest() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[720px]">
-            <Image
+                        <Image
               src={question.image}
               alt={`Non-Verbal Question ${question.no}`}
               width={1024}
               height={1448}
-              priority={currentQuestion === 0}
+              unoptimized
+              priority
+              decoding="async"
               className="block h-auto w-full select-none"
               draggable={false}
             />

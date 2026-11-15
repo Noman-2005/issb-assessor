@@ -1,0 +1,110 @@
+// Word bank for the Word Association Test.
+// To add words: just type new words below, one per line (commas also work).
+// Duplicates are removed automatically.
+const RAW_WORDS = `
+Fear
+Humble
+Wait
+Excuse
+Able
+Short
+Terror
+Cannot
+Cut
+Target
+Fail
+Failure
+Tension
+Garden
+Idea
+Rumor
+Lain
+Machine
+Nature
+Brave
+Accident
+Race
+Spent
+Success
+Sympathy
+Task
+Religion
+Young
+Accept
+Misery
+Sink
+Car
+Love
+Enjoy
+Ditch
+Gay
+Home
+Impossible
+Shy
+Last
+Make
+Beautiful
+Matching
+Bear
+Rule
+Study
+Neglect
+Try
+Offer
+Care
+Sick
+Death
+Pressure
+Trouble
+Protect
+Police
+Quick
+Hell
+Regarded
+Faith
+Reaction
+Girl
+Cool
+Science
+Talk
+Flower
+Team
+Trench
+Sharp
+Kill
+Wife
+Lazy
+Insist
+Project
+Knife
+Pretty
+Lead
+Meet
+Unfair
+Relax
+Coward
+Night
+Space
+Error
+Strong
+Old
+Character
+Shine
+False
+Seldom
+Steam
+Pressure
+Serious
+Insult
+Bones
+Goal
+`;
+
+export const WAT_WORDS: string[] = Array.from(
+  new Map(
+    RAW_WORDS.split(/[\n,]+/)
+      .map((w) => w.trim())
+      .filter(Boolean)
+      .map((w) => [w.toLowerCase(), w] as [string, string])
+  ).values()
+);
