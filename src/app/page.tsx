@@ -10,6 +10,15 @@ const logos = [
 export default function Landing() {
   return (
     <main className="mx-auto flex min-h-[100dvh] max-w-3xl flex-col items-center justify-center px-5 py-14 text-center">
+                  <Link
+        href="/about-issb"
+        className="group fixed right-4 top-4 z-20 rounded-full bg-gradient-to-r from-[#e11d2e] via-[#0b1f5c] to-[#4da6ff] p-[1.5px] shadow-[0_10px_24px_-12px_rgba(11,31,92,.7)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-12px_rgba(225,29,46,.6)] active:scale-95 sm:right-6 sm:top-6"
+      >
+        <span className="flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[.16em] text-[#0b1f5c] transition duration-300 group-hover:bg-[#0b1f5c] group-hover:text-white">
+          About ISSB
+          
+        </span>
+      </Link>
       <h1 className="font-serif text-6xl font-extrabold leading-none tracking-tight sm:text-8xl">
         ISSB
         <span className="mt-3 block text-lg font-semibold uppercase tracking-[.45em] text-stone-500 sm:text-2xl sm:tracking-[.5em]">
