@@ -7,9 +7,31 @@ const logos = [
   { src: "/logos/eagle.jpg", c: "#4da6ff", alt: "Eagle" },
 ];
 
+function CornerMark() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 490 465"
+      className="pointer-events-none fixed left-0 top-0 z-20 h-auto w-14 sm:w-24"
+    >
+      <g
+        transform="translate(4 4)"
+        fill="#3b8a2e"
+        stroke="#111"
+        strokeWidth="8"
+        strokeLinejoin="miter"
+      >
+        <polygon points="0,0 391,0 300,91 80,91 80,323 0,403" />
+        <polygon points="36,36 466,36 355,147 166,147 166,314 36,444" />
+      </g>
+    </svg>
+  );
+}
+
 export default function Landing() {
   return (
     <main className="mx-auto flex min-h-[100dvh] max-w-3xl flex-col items-center justify-center px-5 py-14 text-center">
+            <CornerMark />
       <Link
         href="/about-issb"
         className="group fixed right-3 top-3 z-20 rounded-full bg-gradient-to-r from-[#e11d2e] via-[#0b1f5c] to-[#4da6ff] p-[1.5px] shadow-[0_8px_20px_-12px_rgba(11,31,92,.7)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(225,29,46,.6)] active:scale-95 sm:right-5 sm:top-5"
