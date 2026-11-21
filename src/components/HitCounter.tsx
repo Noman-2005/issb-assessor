@@ -23,14 +23,14 @@ export default function HitCounter() {
   }, []);
 
   return (
-    <div className="mt-16 flex justify-start">
-      <div className="inline-flex items-center gap-3 rounded-xl border border-stone-200 bg-white px-3.5 py-2 shadow-[0_8px_20px_-16px_rgba(0,0,0,.5)]">
-        <span className="h-9 w-1 rounded-full bg-gradient-to-b from-[#e11d2e] via-[#0b1f5c] to-[#4da6ff]" />
+    <div className="mt-10 flex justify-start">
+      <div className="inline-flex items-center gap-2 rounded-lg border border-stone-200 bg-white px-2.5 py-1.5 shadow-[0_6px_16px_-14px_rgba(0,0,0,.5)]">
+        <span className="h-6 w-[3px] rounded-full bg-gradient-to-b from-[#e11d2e] via-[#0b1f5c] to-[#4da6ff]" />
         <div>
-          <div className="text-[9px] font-bold uppercase tracking-[.2em] text-stone-500">
-            Total Hits Till Now
+          <div className="text-[8px] font-bold uppercase tracking-[.18em] text-stone-500">
+            Total Hits
           </div>
-          <div className="font-serif text-lg font-bold leading-tight tabular-nums text-[#0b1f5c]">
+          <div className="font-serif text-sm font-bold leading-tight tabular-nums text-[#0b1f5c]">
             {hits === undefined
               ? "…"
               : hits === null
